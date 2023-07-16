@@ -6,7 +6,12 @@
   "scripts": {
     "watch": "nodemon ./src/server.js",
     "start": "node ./src/server.js",
-    "cluster": "pm2 start src/server -i max"
+<<<<<<< HEAD
+    "cluster": "pm2 start src/server -i max",
+=======
+    "test": "jest",
+    "test-watch": "jest --watch",
+>>>>>>> testing
   },
   "keywords": [],
   "author": "",
@@ -19,6 +24,8 @@
     "pm2": "^5.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "jest": "^29.6.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
   }
 }
