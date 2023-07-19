@@ -3,8 +3,6 @@ const path = require('path')
 const { parse } = require('csv-parse');
 const planets = require('./planets.mongo')
 
-// const habitablePlanets = [];
-
 const isPlanetHabitable = data => {
   return data['koi_disposition'] = 'CONFIRMED'
     && data['koi_insol'] > 0.36 && data['koi_insol'] < 1.11
@@ -27,7 +25,9 @@ const savePlantes = async (data) => {
 }
 
 const getHabitablePlanets = async () => {
-  return await planets.find({})
+  return await planets.find({}, {
+    '__id': 0, '__v': 0
+  })
 }
 
 const loadPlanetsData = () => {
