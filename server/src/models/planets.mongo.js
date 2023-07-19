@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const planetsScehema = new mongoose.Schema({
-  kelplerName: {
+  keplerName: {
     type: String,
     required: true
   }
