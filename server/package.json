@@ -7,12 +7,15 @@
     "watch": "nodemon ./src/server.js",
     "start": "node ./src/server.js",
     "cluster": "pm2 start src/server.js -i max",
-    "test": "jest",
-    "test-watch": "jest --watch"
+    "test": "jest --detectOpenHandles t",
+    "test-watch": "jest --detectOpenHandles --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"  
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.4.0",
