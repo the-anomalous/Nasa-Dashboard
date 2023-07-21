@@ -1,8 +1,6 @@
 const launchesDatabase = require('./launches.mongo')
 const planets = require('./planets.mongo')
 
-const launches = new Map()
-
 const DEFAULT_FLIGHT_NUMBER = 100
 
 const launch = {
@@ -16,16 +14,11 @@ const launch = {
   success: true
 }
 
-// launches.set(launch.flightNumber, launch)
-
 const saveAllLaunches = async launch => {
   const planet = await planets.findOne({
     keplerName: launch.target
   })
   
-  console.log(launch)
-  console.log(planet)
-
   if (!planet) {
     throw new Error('Planet not found')
   }
