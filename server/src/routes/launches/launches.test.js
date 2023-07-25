@@ -5,9 +5,12 @@ const {
   disconnectMongoDB
 } = require('../../services/mongo')
 
+const {loadPlanetsData} = require('../../models/planets.model')
+
 describe('Testing Lauches API', () => {
   beforeAll(async () => {
     await connectMongoDB()
+    await loadPlanetsData()
   })
 
   afterAll(async () => {
